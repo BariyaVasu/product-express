@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const prodcutRoutes = require("./routes/productRoutes");
+const showProduct = require("./routes/getProduct");
 
 
 
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/product', prodcutRoutes);
+app.use('/show', showProduct);
 //Connection to MongoDB
 
 mongoose.connect("mongodb+srv://bariyavasu46:g0BkE8Sxi8JOwPW2@cluster0.ksdxbvm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
